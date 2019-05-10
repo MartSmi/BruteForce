@@ -57,15 +57,16 @@ btnBack.onclick = function () {
   }
 }
 
-
-let request = new XMLHttpRequest();
+var request = new XMLHttpRequest();
 request.open('GET', './gatsby.json');
 
 request.onload = function() {
-let data = JSON.parse(request.responseText);
-console.log(data);
-console.log(data[2]);
-document.getElementById('gatsby').innerHTML = data[0];
-
+  let data = JSON.parse(request.responseText);
+  console.log(data);
+  for(var n = 0; n < data.length; n++) {
+    var para = document.createElement("li");
+    para.innerHTML += data[n];
+    document.getElementById("gatsby").appendChild(para);
+  }
 };
 request.send();
