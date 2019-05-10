@@ -1,5 +1,6 @@
 let stepsTotal = 4;
 let currentStep = 1;
+var keywords = [];
 
 let prog = document.getElementById('progress');
 
@@ -27,6 +28,7 @@ btnNext.onclick = function () {
 
   switch (currentStep) {
     case 2:
+      getJson();
       $(btnBack).show();
       $("#step2").show();
     break;
@@ -57,17 +59,20 @@ btnBack.onclick = function () {
   }
 }
 
-var request = new XMLHttpRequest();
-request.open('GET', './gatsby.json');
+// Getting JSON
+function getJson() {
+  var request = new XMLHttpRequest();
+  request.open('GET', './gatsby.json');
 
-request.onload = function() { // Do not get lost
+  request.onload = function() { // Do not get lost
 
-  let data = JSON.parse(request.responseText);
-  console.log(data);
-  let pull = pullText(data);
-};
-request.send();
+    let data = JSON.parse(request.responseText);
+    let pull = pullText(data);
+  };
+  request.send();
+}
 
+//Pulling the text words from JSON
 function pullText(text) {
   for(var n = 0; n < text.length; n++) {
     var para = document.createElement("li");
@@ -75,12 +80,12 @@ function pullText(text) {
     para.innerHTML += text[n] + ' ';
     document.getElementById("gatsby").appendChild(para);
   }
+  // Text functionality
   $('li').click(function () {
-<<<<<<< HEAD
-    alert($(this.id));
-=======
-    alert($(this).text());
->>>>>>> 95ee1f098138c08d09f0e5be70d8d76553c73239
-});
-
+    if (this.getAttribute("style") != "color:green") {
+      this.setAttribute('style', 'color:green');
+      keywords[keywordsCount++] = $(this).text();
+      alert(keywords);
+    }
+  });
 }
