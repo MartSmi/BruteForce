@@ -60,13 +60,22 @@ btnBack.onclick = function () {
 var request = new XMLHttpRequest();
 request.open('GET', './gatsby.json');
 
-request.onload = function() {
+request.onload = function() { // Do not get lost
+
   let data = JSON.parse(request.responseText);
   console.log(data);
-  for(var n = 0; n < data.length; n++) {
-    var para = document.createElement("li");
-    para.innerHTML += data[n];
-    document.getElementById("gatsby").appendChild(para);
-  }
+  let pull = pullText(data);
 };
 request.send();
+
+function pullText(text) {
+  for(var n = 0; n < text.length; n++) {
+    var para = document.createElement("li");
+    para.setAttribute('id', 'list' + n);
+    para.innerHTML += text[n] + ' ';
+    document.getElementById("gatsby").appendChild(para);
+  }
+  $('li').click(function () {
+    alert($(this.object));
+});
+}
