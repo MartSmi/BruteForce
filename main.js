@@ -63,7 +63,7 @@ btnBack.onclick = function () {
 
 
 let request = new XMLHttpRequest();
-request.open('GET', 'file:///Users/mpupei/Documents/GitHub/BruteForce/gatsby.json');
+request.open('GET', 'file:///Users/stovykla10/Documents/GitHub/BruteForce/gatsby.json');
 
 request.onload = function() {
   let data = JSON.parse(request.responseText);
