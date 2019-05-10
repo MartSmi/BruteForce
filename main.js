@@ -76,6 +76,6 @@ function pullText(text) {
     document.getElementById("gatsby").appendChild(para);
   }
   $('li').click(function () {
-    alert($(this.object));
+    alert($(this.id));
 });
 }
