@@ -25,6 +25,7 @@ btnNext.onclick = function () {
   $(".steps").hide();
   switch (currentStep) {
     case 2:
+      $(btnBack).show();
       $("#step2").show();
     break;
 
