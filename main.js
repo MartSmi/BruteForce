@@ -1,3 +1,1 @@
-var hello = " hehhfvhjc";
-
-fhdufygh
+var stepsTotal = 3;
