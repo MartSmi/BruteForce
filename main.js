@@ -67,7 +67,9 @@ request.open('GET', 'file:///Users/mpupei/Documents/GitHub/BruteForce/gatsby.jso
 
 request.onload = function() {
   let data = JSON.parse(request.responseText);
-  console.log(data[0]);
+  console.log(data);
+  console.log(data[2]);
+  document.getElementById('gatsby').innerHTML = data[0];
 
 };
 request.send();
