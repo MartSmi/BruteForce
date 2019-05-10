@@ -2,58 +2,67 @@ let stepsTotal = 4;
 let currentStep = 1;
 var keywords = [];
 
-let prog = document.getElementById('progress');
-
-let steps = document.getElementById('steps');
+let btnGen = document.getElementById('generate');
 
 let btnNext = document.getElementById('next');
 
 let btnBack = document.getElementById('back');
 
+getJson();
 $(btnBack).hide();
+$(btnNext).hide();
 $("#step2").hide();
 $("#step3").hide();
 $("#step4").hide();
-steps.innerHTML = "Step: " + currentStep;
+$("#imgBackround2").hide();
+$("#step4").hide();
+$("#step4").hide();
+
+btnGen.onclick = function () {
+  $(btnBack).show();
+  $(btnNext).show();
+  $("#imgBackround1").hide();
+  $("#imgBackround2").show();
+  $("#step1").hide();
+  $("#step2").show();
+  currentStep++;
+
+}
 
 btnNext.onclick = function () {
-
-  if (currentStep < 4) {
-    currentStep++;
-    steps.innerHTML = "Step: " + currentStep;
-  }
-
-  $(".steps").hide();
-
-
+  currentStep++;
   switch (currentStep) {
-    case 2:
-      getJson();
-      $(btnBack).show();
-      $("#step2").show();
-    break;
-
     case 3:
+      $("#step2").hide();
       $("#step3").show();
     break;
 
     case 4:
+      $("#step3").hide();
       $("#step4").show();
     break;
   }
 }
 
 btnBack.onclick = function () {
+  currentStep--;
   switch (currentStep) {
-    case 2:
+    case 1:
+      $(btnBack).hide();
+      $(btnNext).hide();
+      $("#step2").hide();
       $("#step1").show();
+      $("#imgBackround1").show();
+      $("#imgBackround2").hide();
     break;
 
-    case 3:
+    case 2:
+      $("#step3").hide();
       $("#step2").show();
     break;
 
-    case 4:
+    case 3:
+      $("#step4").hide();
       $("#step3").show();
     break;
   }
@@ -78,7 +87,7 @@ function pullText(text) {
     var para = document.createElement("li");
     para.setAttribute('id', 'list' + n);
     para.innerHTML += text[n] + ' ';
-    document.getElementById("gatsby").appendChild(para);
+    document.getElementById("keytext").appendChild(para);
   }
   // Text functionality
   $('li').click(function () {
