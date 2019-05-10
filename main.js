@@ -57,19 +57,17 @@ btnBack.onclick = function () {
   }
 }
 
-/*$.getJSON("gatsby.json", function(json) {
-    console.log('received');
-});*/
-
-
-let request = new XMLHttpRequest();
-request.open('GET', 'file:///Users/stovykla10/Documents/GitHub/BruteForce/gatsby.json');
+var request = new XMLHttpRequest();
+request.open('GET', './gatsby.json');
 
 request.onload = function() {
   let data = JSON.parse(request.responseText);
   console.log(data);
-  console.log(data[2]);
-  document.getElementById('gatsby').innerHTML = data[0];
+  for(var n = 0; n < data.length; n++) {
+    var para = document.createElement("li");
+    para.innerHTML += data[n];
+    document.getElementById("gatsby").appendChild(para);
+  }
 
 };
 request.send();
