@@ -9,9 +9,6 @@ let btnNext = document.getElementById('next');
 
 let btnBack = document.getElementById('back');
 
-$(btnBack).hide();
-
-
 btn.onclick = function () {
   if (currentStep < 4) {
     currentStep++;
