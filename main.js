@@ -57,6 +57,17 @@ btnBack.onclick = function () {
   }
 }
 
-$.getJSON( "gatsby.json", function(json) {
-    console.log( "JSON Data received, name is " + json.name);
-});
+/*$.getJSON("gatsby.json", function(json) {
+    console.log('received');
+});*/
+
+
+let request = new XMLHttpRequest();
+request.open('GET', 'file:///Users/mpupei/Documents/GitHub/BruteForce/gatsby.json');
+
+request.onload = function() {
+  let data = JSON.parse(request.responseText);
+  console.log(data[0]);
+
+};
+request.send();
