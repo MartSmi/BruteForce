@@ -23,6 +23,8 @@ btnNext.onclick = function () {
   }
 
   $(".steps").hide();
+
+
   switch (currentStep) {
     case 2:
       $("#step2").show();
@@ -34,6 +36,22 @@ btnNext.onclick = function () {
 
     case 4:
       $("#step4").show();
+    break;
+  }
+}
+
+btnBack.onclick = function () {
+  switch (currentStep) {
+    case 2:
+      $("#step1").show();
+    break;
+
+    case 3:
+      $("#step2").show();
+    break;
+
+    case 4:
+      $("#step3").show();
     break;
   }
 }
