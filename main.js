@@ -5,6 +5,12 @@ let prog = document.getElementById('progress');
 
 let steps = document.getElementById('steps');
 
+let btnNext = document.getElementById('next');
+
+let btnBack = document.getElementById('back');
+
+$(btnBack).hide();
+
 
 btn.onclick = function () {
   if (currentStep < 4) {
@@ -12,10 +18,3 @@ btn.onclick = function () {
     steps.innerHTML = "Step: " + currentStep;
   }
 }
-/*
-$("").click(function(){
-  $("p").hide();
-});
-$(".btn2").click(function(){
-  $("p").show();
-});*/
