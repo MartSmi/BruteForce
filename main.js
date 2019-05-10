@@ -1,5 +1,15 @@
-var stepsTotal = 3;
+let stepsTotal = 4;
+let currentStep = 0;
 
-prog = document.getElementById('progress');
+let prog = document.getElementById('progress');
 
-console.log(prog);
+let steps = document.getElementById('steps');
+
+let btn = document.getElementById('generate');
+
+btn.onclick = function () {
+  if (currentStep < 4) {
+    currentStep++;
+    steps.innerHTML = "Step: " + currentStep;
+  }
+}
