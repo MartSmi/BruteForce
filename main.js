@@ -57,21 +57,6 @@ btnBack.onclick = function () {
   }
 }
 
-// $.ajax({
-//   method: 'GET',
-//   url: 'gatsby.json',
-//   success: function(json) {
-//     console.log("Success", json);
-//   }
-// })
-
-/*$.getJSON("", function(json) {
-  console.log(json);
-  let data = JSON.parse(json.responseText);
-  console.log(json[2]);
-  document.getElementById('gatsby').innerHTML = json[0];
-});*/
-
 
 let request = new XMLHttpRequest();
 request.open('GET', './gatsby.json');
