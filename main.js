@@ -56,3 +56,7 @@ btnBack.onclick = function () {
     break;
   }
 }
+
+$.getJSON( "gatsby.json", function(json) {
+    console.log( "JSON Data received, name is " + json.name);
+});
