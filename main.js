@@ -5,7 +5,6 @@ let prog = document.getElementById('progress');
 
 let steps = document.getElementById('steps');
 
-let btn = document.getElementById('generate');
 
 btn.onclick = function () {
   if (currentStep < 4) {
