@@ -13,3 +13,10 @@ btn.onclick = function () {
     steps.innerHTML = "Step: " + currentStep;
   }
 }
+/*
+$("").click(function(){
+  $("p").hide();
+});
+$(".btn2").click(function(){
+  $("p").show();
+});*/
