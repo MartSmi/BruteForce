@@ -57,19 +57,30 @@ btnBack.onclick = function () {
   }
 }
 
-/*$.getJSON("gatsby.json", function(json) {
-    console.log('received');
+// $.ajax({
+//   method: 'GET',
+//   url: 'gatsby.json',
+//   success: function(json) {
+//     console.log("Success", json);
+//   }
+// })
+
+/*$.getJSON("", function(json) {
+  console.log(json);
+  let data = JSON.parse(json.responseText);
+  console.log(json[2]);
+  document.getElementById('gatsby').innerHTML = json[0];
 });*/
 
 
 let request = new XMLHttpRequest();
-request.open('GET', 'file:///Users/stovykla10/Documents/GitHub/BruteForce/gatsby.json');
+request.open('GET', './gatsby.json');
 
 request.onload = function() {
-  let data = JSON.parse(request.responseText);
-  console.log(data);
-  console.log(data[2]);
-  document.getElementById('gatsby').innerHTML = data[0];
+let data = JSON.parse(request.responseText);
+console.log(data);
+console.log(data[2]);
+document.getElementById('gatsby').innerHTML = data[0];
 
 };
 request.send();
