@@ -76,6 +76,11 @@ function pullText(text) {
     document.getElementById("gatsby").appendChild(para);
   }
   $('li').click(function () {
+<<<<<<< HEAD
     alert($(this.id));
+=======
+    alert($(this).text());
+>>>>>>> 95ee1f098138c08d09f0e5be70d8d76553c73239
 });
+
 }
