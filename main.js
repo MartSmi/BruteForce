@@ -9,6 +9,8 @@ let btnNext = document.getElementById('next');
 
 let btnBack = document.getElementById('back');
 
+let progress = document.getElementById('progressthin');
+
 getJson();
 $(btnBack).hide();
 $(btnNext).hide();
@@ -30,19 +32,17 @@ btnGen.onclick = function () {
 btnNext.onclick = function () {
   currentStep++;
   switch (currentStep) {
-    case 1:
-      $("#step0").hide();
-      $("#step1").show();
-    break;
-
     case 2:
       $("#step1").hide();
       $("#step2").show();
+      progress.style.width = '33%';
     break;
 
     case 3:
       $("#step2").hide();
       $("#step3").show();
+      progress.style.width = '66%';
+
     break;
 
     case 4:
@@ -50,6 +50,8 @@ btnNext.onclick = function () {
       $("#step4").show();
       $(btnBack).hide();
       $(btnNext).hide();
+      progress.style.width = '99%';
+
     break;
   }
 }

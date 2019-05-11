@@ -25,11 +25,12 @@ body{
 
 #progressthin{
   position: absolute;
-  width: 99%;
+  width: 0%;
   height: 25%;
   left: 0.5%;
   top: 37.5%;
   background: #589AFF;
+  transition: width 1s;
 }
 
 #circle1{
