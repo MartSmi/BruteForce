@@ -48,6 +48,8 @@ btnNext.onclick = function () {
     case 4:
       $("#step3").hide();
       $("#step4").show();
+      $(btnBack).hide();
+      $(btnNext).hide();
     break;
   }
 }
@@ -76,8 +78,8 @@ btnBack.onclick = function () {
     break;
 
     case 3:
-      $("#step2").hide();
-      $("#step1").show();
+      $("#step4").hide();
+      $("#step3").show();
     break;
   }
 }
