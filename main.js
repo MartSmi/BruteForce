@@ -51,7 +51,6 @@ btnNext.onclick = function () {
       $("#step4").show();
       $(btnBack).hide();
       $(btnNext).hide();
-      alert
       createPassword(keywords, favNumber, output);
     break;
   }
