@@ -35,25 +35,25 @@ body{
 #circle1{
   position: absolute;
   left: 0%;
-  top: -15%;
+  top: 0;
 }
 
 #circle2{
   position: absolute;
   left: 33.3%;
-  top: -15%;
+  top: 0;
 }
 
 #circle3{
   position: absolute;
   left: 66.6%;
-  top: -15%;
+  top: 0;
 }
 
 #circle4{
   position: absolute;
   left: 98%;
-  top: -15%;
+  top: 0;
 }
 .bigcircle{
   position: absolute;
