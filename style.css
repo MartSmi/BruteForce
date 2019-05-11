@@ -230,21 +230,32 @@ color: #5D5D5D;
   background: #FFFFFF;
 }
 
-#emoji{
+/*{
   position: absolute;
-width: 866px;
-height: 63px;
-left: 261px;
-top: 488px;
+  width: 866px;
+  height: 63px;
+  left: 261px;
+  top: 488px;
 
-font-family: Roboto;
-font-style: normal;
-font-weight: 500;
-font-size: 64px;
-line-height: 75px;
-text-align: center;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 64px;
+  line-height: 75px;
 
-color: #000000;
+  color: #000000;
+}*/
+#emotes {
+  position: fixed;
+  width: 866px;
+  height: 63px;
+  left: 261px;
+  top: 488px;
+}
+
+.emoji {
+  display: inline;
+  font-size: 50px;
 }
 
 #genpass{
