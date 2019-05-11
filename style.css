@@ -307,8 +307,13 @@ color: #5D5D5D;
   font-size: 64px;
   line-height: 75px;
   float: left;
+  transition: font-size 0.3s;
 
   color: #000000;
+}
+
+.emoji:hover{
+  font-size: 100px;
 }
 
 #emotes {
