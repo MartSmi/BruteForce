@@ -84,11 +84,15 @@ function getJson() {
 
 //Pulling the text words from JSON
 function pullText(text) {
-  for(var n = 0; n < text.length; n++) {
-    var para = document.createElement("li");
-    para.setAttribute('id', 'list' + n);
-    para.innerHTML += text[n] + ' ';
-    document.getElementById("keytext").appendChild(para);
+  let line = Math.floor(Math.random()*(text.length));
+  for(var l = line; l <= line + 5; l++)
+  {
+    for(var n = 0; n < text[l].length; n++) {
+      var para = document.createElement("li");
+      para.setAttribute('id', 'list' + n);
+      para.innerHTML += text[l][n] + ' ';
+      document.getElementById("keytext").appendChild(para);
+    }
   }
   // Text functionality
   $('li').click(function () {
