@@ -249,45 +249,45 @@ color: #000000;
 
 #genpass{
   position: absolute;
-width: 485px;
-height: 23px;
-left: 11%;
-top: 266px;
+  width: 485px;
+  height: 23px;
+  left: 11%;
+  top: 266px;
 
-font-family: Roboto;
-font-style: normal;
-font-weight: normal;
-font-size: 18px;
-line-height: 21px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
 
-color: #5E5E5E;
+  color: #5E5E5E;
 }
 
 #passcontainer{
   position: absolute;
-width: 397px;
-height: 60px;
-left: 257px;
-top: 311px;
+  width: 397px;
+  height: 60px;
+  left: 257px;
+  top: 311px;
 
-background: #FFFFFF;
-box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 34px;
+  background: #FFFFFF;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 34px;
 }
 
 #pass{
   position: absolute;
-width: 485px;
-height: 23px;
-left: 11%;
-top: 330px;
+  width: 485px;
+  height: 23px;
+  left: 11%;
+  top: 330px;
 
-font-family: Roboto;
-font-style: normal;
-font-weight: normal;
-font-size: 18px;
-line-height: 21px;
-color: #5E5E5E;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: #5E5E5E;
 }
 
 #copy
@@ -376,24 +376,3 @@ color: #5E5E5E;
   border-radius: 50%;
   background: #51ACF6;
 }
-
-#sliderBar {
-  width: 821px;
-  height: 20px;
-  -webkit-appearance:none;
-}
-/*
-#slideBar::-webkit-slider-thumb {
-  -webkit-appearance:none;
-  width: 40px;
-  height: 40px;
-  background-color: white;
-  border-radius: 50%;
-  cursor: pointer;
-  outline: none;
-}
-
-#slideBar:active::-webkit-slider-thumb {
-  box-shadow: 0 0 0 3px rgb(66, 98, 244),
-              0 0 0 6px rgb(66, 98, 244);
-}*/
