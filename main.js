@@ -12,27 +12,34 @@ let btnBack = document.getElementById('back');
 getJson();
 $(btnBack).hide();
 $(btnNext).hide();
+$("#step1").hide();
 $("#step2").hide();
 $("#step3").hide();
 $("#step4").hide();
 $("#imgBackround2").hide();
-$("#step4").hide();
-$("#step4").hide();
 
 btnGen.onclick = function () {
   $(btnBack).show();
   $(btnNext).show();
   $("#imgBackround1").hide();
   $("#imgBackround2").show();
-  $("#step1").hide();
-  $("#step2").show();
-  currentStep++;
-
+  $("#step0").hide();
+  $("#step1").show();
 }
 
 btnNext.onclick = function () {
   currentStep++;
   switch (currentStep) {
+    case 1:
+      $("#step0").hide();
+      $("#step1").show();
+    break;
+
+    case 2:
+      $("#step1").hide();
+      $("#step2").show();
+    break;
+
     case 3:
       $("#step2").hide();
       $("#step3").show();
@@ -48,13 +55,19 @@ btnNext.onclick = function () {
 btnBack.onclick = function () {
   currentStep--;
   switch (currentStep) {
-    case 1:
+    case 0:
       $(btnBack).hide();
       $(btnNext).hide();
-      $("#step2").hide();
-      $("#step1").show();
+      $("#step1").hide();
+      $("#step0").show();
       $("#imgBackround1").show();
       $("#imgBackround2").hide();
+      currentStep++;
+    break;
+
+    case 1:
+      $("#step2").hide();
+      $("#step1").show();
     break;
 
     case 2:
@@ -63,8 +76,8 @@ btnBack.onclick = function () {
     break;
 
     case 3:
-      $("#step4").hide();
-      $("#step3").show();
+      $("#step2").hide();
+      $("#step1").show();
     break;
   }
 }
