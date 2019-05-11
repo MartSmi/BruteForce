@@ -230,21 +230,21 @@ color: #5D5D5D;
   background: #FFFFFF;
 }
 
-#emoji{
-  position: absolute;
-width: 866px;
-height: 63px;
-left: 261px;
-top: 488px;
+.emoji{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 64px;
+  line-height: 75px;
+  float: left;
 
-font-family: Roboto;
-font-style: normal;
-font-weight: 500;
-font-size: 64px;
-line-height: 75px;
-text-align: center;
+  color: #000000;
+}
 
-color: #000000;
+#emotes {
+  position: fixed;
+  top: 400px;
+  left: 30%;
 }
 
 #genpass{
