@@ -110,52 +110,58 @@ document.getElementById('sliderBar').oninput = function () {
     document.getElementById('favnumb').innerHTML = favNumber;
   }
 }
+var output = '';
 
 function getEmojiId(emoji) {
   console.log(emoji);
   switch (emoji) {
-    case 1:
-      emoji = ':)';
+    case 'emoji1':
+      output = ':)';
     break;
 
-    case 2:
-      emoji = ':*';
+    case 'emoji2':
+      output = ':*';
     break;
 
-    case 3:
-      emoji = '>:‑)';
+    case 'emoji3':
+      output = '>:‑)';
     break;
 
-    case 4:
-      emoji = '';
+    case 'emoji4':
+      output = ':(';
     break;
 
-    case 5:
-      emoji = '';
+    case 'emoji5':
+      output = ':D';
     break;
 
-    case 6:
-      emoji = '';
+    case 'emoji6':
+      output = ';)';
     break;
 
-    case 7:
-      emoji = '';
+    case 'emoji7':
+      output = '<3';
     break;
 
-    case 8:
-      emoji = '';
+    case 'emoji8':
+      output = ":'(";
     break;
 
-    case 9:
-      emoji = '';
+    case 'emoji9':
+      output = ':O';
     break;
 
-    case 10:
-      emoji = '';
+    case 'emoji10':
+      output = ':|';
     break;
 
-    case 11:
-      emoji = '';
+    case 'emoji11':
+      output = 'XD';
+    break;
+
+    case 'emoji12':
+      output = ':(0';
     break;
   }
+  console.log(output);
 }
