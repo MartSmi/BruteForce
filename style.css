@@ -181,7 +181,7 @@ body{
   position: absolute;
   width: 30%;
   height: 25%;
-  left: 11%;
+  left: 21.5%;
   top: 35%;
 
   padding: 10px 20px 10px 20px;
@@ -261,7 +261,7 @@ color: #5D5D5D;
   position: absolute;
   width: 821px;
   height: 20px;
-  left: 11%;
+  left: 22.5%;
   top: 461px;
 
   background: #F9F9F9;
@@ -353,7 +353,7 @@ color: #5D5D5D;
 
 
 #sliderBar {
-  width: 821px;
+  width: 805px;
   height: 20px;
 }
 

@@ -72,16 +72,21 @@ btnBack.onclick = function () {
     case 1:
       $("#step2").hide();
       $("#step1").show();
+      progress.style.width = '0';
+
     break;
 
     case 2:
       $("#step3").hide();
       $("#step2").show();
+      progress.style.width = '33%';
     break;
 
     case 3:
       $("#step4").hide();
       $("#step3").show();
+      progress.style.width = '66%';
+
     break;
   }
 }
