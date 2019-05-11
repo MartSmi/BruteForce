@@ -99,7 +99,6 @@ function pullText(text) {
     if (this.getAttribute("style") != "color:green") {
       this.setAttribute('style', 'color:green');
       keywords[keywordsCount++] = $(this).text();
-      alert(keywords);
     }
   });
 }
