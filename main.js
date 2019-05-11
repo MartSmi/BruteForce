@@ -113,4 +113,49 @@ document.getElementById('sliderBar').oninput = function () {
 
 function getEmojiId(emoji) {
   console.log(emoji);
+  switch (emoji) {
+    case 1:
+      emoji = ':)';
+    break;
+
+    case 2:
+      emoji = ':*';
+    break;
+
+    case 3:
+      emoji = '>:‑)';
+    break;
+
+    case 4:
+      emoji = '';
+    break;
+
+    case 5:
+      emoji = '';
+    break;
+
+    case 6:
+      emoji = '';
+    break;
+
+    case 7:
+      emoji = '';
+    break;
+
+    case 8:
+      emoji = '';
+    break;
+
+    case 9:
+      emoji = '';
+    break;
+
+    case 10:
+      emoji = '';
+    break;
+
+    case 11:
+      emoji = '';
+    break;
+  }
 }
