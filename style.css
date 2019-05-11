@@ -376,3 +376,24 @@ color: #5E5E5E;
   border-radius: 50%;
   background: #51ACF6;
 }
+
+#sliderBar {
+  width: 821px;
+  height: 20px;
+  -webkit-appearance:none;
+}
+/*
+#slideBar::-webkit-slider-thumb {
+  -webkit-appearance:none;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  outline: none;
+}
+
+#slideBar:active::-webkit-slider-thumb {
+  box-shadow: 0 0 0 3px rgb(66, 98, 244),
+              0 0 0 6px rgb(66, 98, 244);
+}*/
