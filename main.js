@@ -2,15 +2,12 @@ let stepsTotal = 4;
 let currentStep = 1;
 var keywords = [];
 let keywordsCount = 0;
-// let emojis = ["🙂".codePointAt(0), "😘".codePointAt(0), "😕".codePointAt(0), "😃".codePointAt(0), "😉".codePointAt(0), "❤️".codePointAt(0),️ "😢.codePointAt(0)," "😮".codePointAt(0), "😐".codePointAt(0), "😛".codePointAt(0), "☹️".codePointAt(0)];
-
 
 let btnGen = document.getElementById('generate');
 
 let btnNext = document.getElementById('next');
 
 let btnBack = document.getElementById('back');
-
 
 getJson();
 $(btnBack).hide();
