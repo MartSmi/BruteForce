@@ -99,7 +99,14 @@ function pullText(text) {
     if (this.getAttribute("style") != "color:green") {
       this.setAttribute('style', 'color:green');
       keywords[keywordsCount++] = $(this).text();
-      alert(keywords);
     }
   });
+}
+
+
+document.getElementById('sliderBar').oninput = function () {
+  let favNumber = document.getElementById('sliderBar').value;
+  if (favNumber > 0) {
+    document.getElementById('favnumb').innerHTML = favNumber;
+  }
 }
