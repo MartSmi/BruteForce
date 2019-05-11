@@ -72,7 +72,7 @@ btnBack.onclick = function () {
 // Getting JSON
 function getJson() {
   var request = new XMLHttpRequest();
-  request.open('GET', './gatsby.json');
+  request.open('GET', './keywords.json');
 
   request.onload = function() { // Do not get lost
 
