@@ -2,6 +2,7 @@ let stepsTotal = 4;
 let currentStep = 1;
 var keywords = [];
 let keywordsCount = 0;
+var favNumber;
 
 let btnGen = document.getElementById('generate');
 
@@ -50,6 +51,8 @@ btnNext.onclick = function () {
       $("#step4").show();
       $(btnBack).hide();
       $(btnNext).hide();
+      alert
+      createPassword(keywords, favNumber, output);
     break;
   }
 }
@@ -120,7 +123,7 @@ function pullText(text) {
 
 
 document.getElementById('sliderBar').oninput = function () {
-  let favNumber = document.getElementById('sliderBar').value;
+  favNumber = document.getElementById('sliderBar').value;
   if (favNumber > 0) {
     document.getElementById('favnumb').innerHTML = favNumber;
   }
@@ -179,4 +182,17 @@ function getEmojiId(emoji) {
     break;
   }
   console.log(output);
+}
+
+function createPassword(words, num, emote) {
+  var thePassword = '';
+  for (var i = 0; i < words.length; i++) {
+    console.log(words[i].slice(0, 2));
+    thePassword += words[i].slice(0, 2);
+  }
+  thePassword += num * words.length;
+  console.log(emote);
+  thePassword += emote;
+  document.getElementById('pass').innerHTML = thePassword;
+  document.getElementById('passtext3').innerHTML = words + ' ' + num + ' * ' + words.length + ' ' + emote;
 }
