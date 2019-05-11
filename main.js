@@ -119,8 +119,9 @@ function pullText(text) {
   }
   // Text functionality
   $('li').click(function () {
-    if (this.getAttribute("style") != "color:green") {
-      this.setAttribute('style', 'color:green');
+    if (this.getAttribute("style") != "color:#69abf0") {
+      this.setAttribute('style', 'color:#69abf0');
+      // this.setAttribute('style', 'font-weight:1200');
       keywords[keywordsCount++] = $(this).text();
     }
   });
@@ -201,5 +202,5 @@ function createPassword(words, num, emote) {
   console.log(emote);
   thePassword += emote;
   document.getElementById('pass').innerHTML = thePassword;
-  document.getElementById('passtext3').innerHTML = words + '<br>' + num + ' * ' + words.length + '<br>' + emote;
+  document.getElementById('passtext3').innerHTML = words + '<br>' + '<br>' + '<br>' + num + ' * ' + words.length + ' = ' + favNumber * words.length+ '<br>' + '<br>' + '<br>'+ '<br>' + emote;
 }
