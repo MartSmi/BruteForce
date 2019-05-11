@@ -110,3 +110,7 @@ document.getElementById('sliderBar').oninput = function () {
     document.getElementById('favnumb').innerHTML = favNumber;
   }
 }
+
+function getEmojiId(emoji) {
+  console.log(emoji);
+}
