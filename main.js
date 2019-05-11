@@ -1,85 +1,105 @@
 let stepsTotal = 4;
 let currentStep = 1;
+var keywords = [];
+let keywordsCount = 0;
 
-let prog = document.getElementById('progress');
-
-let steps = document.getElementById('steps');
+let btnGen = document.getElementById('generate');
 
 let btnNext = document.getElementById('next');
 
 let btnBack = document.getElementById('back');
 
+getJson();
 $(btnBack).hide();
+$(btnNext).hide();
 $("#step2").hide();
 $("#step3").hide();
 $("#step4").hide();
-steps.innerHTML = "Step: " + currentStep;
+$("#imgBackround2").hide();
+$("#step4").hide();
+$("#step4").hide();
+
+btnGen.onclick = function () {
+  $(btnBack).show();
+  $(btnNext).show();
+  $("#imgBackround1").hide();
+  $("#imgBackround2").show();
+  $("#step1").hide();
+  $("#step2").show();
+  currentStep++;
+
+}
 
 btnNext.onclick = function () {
-
-  if (currentStep < 4) {
-    currentStep++;
-    steps.innerHTML = "Step: " + currentStep;
-  }
-
-  $(".steps").hide();
-
-
+  currentStep++;
   switch (currentStep) {
-    case 2:
-      $(btnBack).show();
-      $("#step2").show();
-    break;
-
     case 3:
+      $("#step2").hide();
       $("#step3").show();
     break;
 
     case 4:
+      $("#step3").hide();
       $("#step4").show();
     break;
   }
 }
 
 btnBack.onclick = function () {
+  currentStep--;
   switch (currentStep) {
-    case 2:
+    case 1:
+      $(btnBack).hide();
+      $(btnNext).hide();
+      $("#step2").hide();
       $("#step1").show();
+      $("#imgBackround1").show();
+      $("#imgBackround2").hide();
+    break;
+
+    case 2:
+      $("#step3").hide();
+      $("#step2").show();
     break;
 
     case 3:
-      $("#step2").show();
-    break;
-    case 4:
+      $("#step4").hide();
       $("#step3").show();
     break;
   }
 }
 
-var request = new XMLHttpRequest();
-request.open('GET', './gatsby.json');
+// Getting JSON
+function getJson() {
+  var request = new XMLHttpRequest();
+  request.open('GET', './keywords.json');
 
-request.onload = function() { // Do not get lost
+  request.onload = function() { // Do not get lost
 
-  let data = JSON.parse(request.responseText);
-  console.log(data);
-  let pull = pullText(data);
-};
-request.send();
+    let data = JSON.parse(request.responseText);
+    let pull = pullText(data);
+  };
+  request.send();
+}
 
+//Pulling the text words from JSON
 function pullText(text) {
-  for(var n = 0; n < text.length; n++) {
-    var para = document.createElement("li");
-    para.setAttribute('id', 'list' + n);
-    para.innerHTML += text[n] + ' ';
-    document.getElementById("gatsby").appendChild(para);
+  let line = Math.floor(Math.random()*(text.length));
+  for(var l = line; l <= line + 5; l++)
+  {
+    for(var n = 0; n < text[l].length; n++) {
+      var para = document.createElement("li");
+      para.setAttribute('id', 'list' + n);
+      para.innerHTML += text[l][n] + ' ';
+      document.getElementById("keytext").appendChild(para);
+    }
   }
+  // Text functionality
   $('li').click(function () {
-<<<<<<< HEAD
-    alert($(this.id));
-=======
-    alert($(this).text());
->>>>>>> 95ee1f098138c08d09f0e5be70d8d76553c73239
-});
-
+    if (this.getAttribute("style") != "color:green") {
+      this.setAttribute('style', 'color:green');
+      keywords[keywordsCount++] = $(this).text();
+      alert(keywords);
+    }
+  });
 }
