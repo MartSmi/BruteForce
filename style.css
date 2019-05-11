@@ -230,32 +230,21 @@ color: #5D5D5D;
   background: #FFFFFF;
 }
 
-/*{
+#emoji{
   position: absolute;
-  width: 866px;
-  height: 63px;
-  left: 261px;
-  top: 488px;
+width: 866px;
+height: 63px;
+left: 261px;
+top: 488px;
 
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 64px;
-  line-height: 75px;
+font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 64px;
+line-height: 75px;
+text-align: center;
 
-  color: #000000;
-}*/
-#emotes {
-  position: fixed;
-  width: 866px;
-  height: 63px;
-  left: 25%;
-  top: 488px;
-}
-
-.emoji {
-  display: inline;
-  font-size: 50px;
+color: #000000;
 }
 
 #genpass{
@@ -284,6 +273,13 @@ color: #5D5D5D;
   background: #FFFFFF;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 34px;
+}
+
+
+#sliderBar {
+  width: 821px;
+  height: 20px;
+  -webkit-appearance:none;
 }
 
 #pass{
