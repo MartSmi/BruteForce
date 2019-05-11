@@ -1,6 +1,7 @@
 let stepsTotal = 4;
 let currentStep = 1;
 var keywords = [];
+let keywordsCount = 0;
 
 let btnGen = document.getElementById('generate');
 
