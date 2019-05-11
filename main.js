@@ -50,7 +50,6 @@ btnBack.onclick = function () {
     case 3:
       $("#step2").show();
     break;
-
     case 4:
       $("#step3").show();
     break;
