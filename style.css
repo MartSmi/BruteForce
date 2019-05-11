@@ -167,9 +167,9 @@ body{
 
 #keytextcontainer{
   position: absolute;
-  width: 57%;
+  width: 40%;
   height: 30.5%;
-  left: 21.5%;
+  left: 30%;
   top: 36.5%;
 
   background: #FFFFFF;
@@ -179,11 +179,10 @@ body{
 
 #keytext{
   position: absolute;
-  width: 30%;
-  height: 25%;
-  left: 21.5%;
-  top: 35%;
-
+  width: 96%;
+  height: 96%;
+  left: 1%;
+  cursor:pointer;
   padding: 10px 20px 10px 20px;
 
 
@@ -215,6 +214,7 @@ body{
   line-height: 21px;
   text-align: center;
   color: #FFFFFF;
+  cursor: pointer;
 }
 
 #back{
@@ -232,7 +232,7 @@ body{
   position: absolute;
   width: 154px;
   height: 64px;
-  left: 614px;
+  left: 33%;
   top: 515px;
 
   background: #FFFFFF;
@@ -244,8 +244,8 @@ body{
   position: absolute;
   width: 74px;
   height: 17px;
-  left: 654px;
-  top: 538px;
+  left: 40px;
+  top: 21px;
 
   font-family: Roboto;
   font-style: normal;
@@ -260,8 +260,8 @@ color: #5D5D5D;
 #slider{
   position: absolute;
   width: 821px;
-  height: 20px;
-  left: 22.5%;
+  height: 30px;
+  left: 30.5%;
   top: 461px;
 
   background: #F9F9F9;
@@ -309,11 +309,17 @@ color: #5D5D5D;
   line-height: 75px;
   float: left;
   transition: font-size 0.3s;
+  cursor: pointer;
+
 
   color: #000000;
 }
 
 .emoji:hover{
+  font-size: 100px;
+}
+
+.emoji:active{
   font-size: 100px;
 }
 
@@ -354,7 +360,9 @@ color: #5D5D5D;
 
 #sliderBar {
   width: 805px;
-  height: 20px;
+  height: 30px;
+  cursor: pointer;
+
 }
 
 #pass{
@@ -379,6 +387,7 @@ color: #5D5D5D;
   height: 42px;
   left: 665px;
   top: 320px;
+  cursor: pointer;
 
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
 }

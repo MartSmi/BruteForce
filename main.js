@@ -140,6 +140,7 @@ function getEmojiId(emoji) {
   switch (emoji) {
     case 'emoji1':
       output = ':)';
+      emoji.setAttribute('style', 'font-size: 100px');
     break;
 
     case 'emoji2':
