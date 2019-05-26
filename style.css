@@ -2,10 +2,30 @@
   visibility: hidden;
 }
 
-body{
+body, html{
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
   background-color: #F2F7FF;
 }
+
+#mainSlider{
+  width: 500vw;
+  height: 100vh;
+  transition:all 2.0s ease-in-out;
+  }
+
+.steps{
+  padding:0;
+  margin:0;
+  width: 100vw;
+  height: 100vh;
+  float:left;
+}
+
 #progresscontainer{
+  display: none;
   position: fixed;
   width: 50%;
   height: 3.8%;
@@ -13,6 +33,7 @@ body{
   top: 6%;
 
 }
+
 #progressthick{
   position: absolute;
   width: 99%;
@@ -89,6 +110,8 @@ body{
 }
 
 .img{
+  width: 100vw;
+  height: 100vh;
   user-drag: none;
   user-select: none;
   -moz-user-select: none;
@@ -105,6 +128,7 @@ body{
 }
 
 #imgBackround2{
+  display: none;
   position: absolute;
   top:0;
   left:0;
@@ -112,7 +136,7 @@ body{
 }
 
 #imgShield{
-  position: absolute;
+  position: relative;
   width: 7.1%;
   height: 18.1%;
   left: 91%;
@@ -123,21 +147,21 @@ body{
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
-  font-size: 48px;
+  font-size: 3rem;
   line-height: 56px;
   color: #5E5E5E;
 }
 
 #question{
-  position: absolute;
+  position: relative;
   width:  31%;
   height: 11%;
   left: 9%;
-  top: 33%;
+  top: 12%;
 }
 
 #command{
-  position: absolute;
+  position: relative;
   width: 31%;
   height: 8%;
   left: 21.5%;
@@ -145,43 +169,40 @@ body{
 }
 
 #congrats{
-  position: absolute;
+  position: relative;
   width: 31%;
   height: 8%;
   left: 11%;
   top: 22%;
-
-
 }
 
-
 #fact{
-  position: absolute;
+  position: relative;
   width: 33%;
   height: 8.3%;
   left: 9%;
-  top: 46.7%;
+  top: 15%;
 
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 28px;
 
   color: #5D5D5D;
 }
 
 #generate{
-  left: 9%;
-  top: 59%;
+  left: 9vw;
+  top: 59vh;
 }
 
 #keytextcontainer{
-  position: absolute;
+  position: relative;
   width: 40%;
   height: 30.5%;
   left: 30%;
-  top: 36.5%;
+  top: 23%;
 
   background: #FFFFFF;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
@@ -189,7 +210,7 @@ body{
 }
 
 #keytext{
-  position: absolute;
+  position: relative;
   width: 96%;
   height: 96%;
   left: 1%;
@@ -200,7 +221,7 @@ body{
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 28px;
 
   color: #5D5D5D;
@@ -221,30 +242,33 @@ body{
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 21px;
   text-align: center;
+  outline: none;
   color: #FFFFFF;
   cursor: pointer;
 }
 
 #back{
+  display: none;
   left: 29%;
   top: 70%;
 }
 
 
 #next{
+  display: none;
   left: 64%;
   top: 70%;
 }
 
 #favnumbcont{
-  position: absolute;
+  position: relative;
   width: 154px;
   height: 64px;
   left: 33%;
-  top: 515px;
+  top: 40%;
 
   background: #FFFFFF;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
@@ -252,7 +276,7 @@ body{
 }
 
 #favnumb{
-  position: absolute;
+  position: relative;
   width: 74px;
   height: 17px;
   left: 40px;
@@ -261,7 +285,7 @@ body{
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 21px;
   text-align: center;
 
@@ -269,54 +293,65 @@ color: #5D5D5D;
 }
 
 #slider{
-  position: absolute;
-  width: 821px;
+  position: relative;
+  width: 42%;
   height: 30px;
-  left: 30.5%;
-  top: 461px;
+  left: 29%;
+  top: 33%;
 
   background: #F9F9F9;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1), inset 0px 4px 4px rgba(0, 0, 0, 0.1);
   border-radius: 47px;
 }
 
-#line{
-  position: absolute;
-  width: 467px;
-  height: 8px;
-  left: 289px;
-  top: 467px;
-
+#sliderBar {
+  position: relative;
+  top: 6px;
+  left: 1%;
+  width: 98%;
+  height: 15px;
+  -webkit-appearance: none;
+  border-radius: 5px;
   background: #589AFF;
-  border-radius: 11px;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
 }
 
-#circle{
-  position: absolute;
-  width: 27px;
-  height: 27px;
-  left: 742px;
-  top: 458px;
-  border-radius: 50%;
-
-  background: #589AFF;
+#sliderBar::-moz-focus-outer {
+  border: 0;
 }
 
-#lcircle{
-  position: absolute;
-  width: 13px;
-  height: 13px;
-  left: 749px;
-  top: 465px;
+#sliderBar:hover {
+  opacity: 1;
+}
+
+#sliderBar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
-  background: #FFFFFF;
+  background: #ffffff;
+  cursor: pointer;
+  border: 8px solid #589AFF;
+}
+
+#sliderBar::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+  border: 8px solid #589AFF;
 }
 
 .emoji{
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
-  font-size: 64px;
+  font-size: 4rem;
   line-height: 75px;
   float: left;
   transition: font-size 0.3s;
@@ -335,13 +370,13 @@ color: #5D5D5D;
 }
 
 #emotes {
-  position: fixed;
+  position: relative;
   top: 400px;
   left: 30%;
 }
 
 #genpass{
-  position: absolute;
+  position: relative;
   width: 485px;
   height: 23px;
   left: 11%;
@@ -350,14 +385,14 @@ color: #5D5D5D;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 21px;
 
   color: #5E5E5E;
 }
 
 #passcontainer{
-  position: absolute;
+  position: relative;
   width: 397px;
   height: 60px;
   left: 257px;
@@ -368,48 +403,8 @@ color: #5D5D5D;
   border-radius: 34px;
 }
 
-
-#sliderBar {
-  position: relative;
-  top: 6px;
-  left: 5px;
-  width: 805px;
-  height: 15px;
-  -webkit-appearance: none;
-  border-radius: 5px;
-  background: #589AFF;
-  outline: round;
-  opacity: 0.7;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
-}
-
-#sliderBar:hover {
-  opacity: 1;
-}
-
-#sliderBar::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  background: #589AFF;
-  cursor: pointer;
-}
-
-#sliderBar::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  background: #ffffff;
-  cursor: pointer;
-  border: 8px solid #589AFF;
-}
-
-
 #pass{
-  position: absolute;
+  position: relative;
   width: 485px;
   height: 23px;
   left: 11%;
@@ -418,14 +413,14 @@ color: #5D5D5D;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 21px;
   color: #5E5E5E;
 }
 
 #copy
 {
-  position: absolute;
+  position: relative;
   width: 42px;
   height: 42px;
   left: 665px;
@@ -436,7 +431,7 @@ color: #5D5D5D;
 }
 
 #passtext1{
-  position: absolute;
+  position: relative;
   width: 279px;
   height: 39px;
   left: 11%;
@@ -445,14 +440,14 @@ color: #5D5D5D;
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 21px;
 
   color: #5D5D5D;
 }
 
 #passtext2{
-  position: absolute;
+  position: relative;
   width: 250px;
   height: 141px;
   left: 316px;
@@ -461,13 +456,13 @@ color: #5D5D5D;
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 21px;
   color: #5D5D5D;
 }
 
 #passtext3{
-  position: absolute;
+  position: relative;
   width: 279px;
   height: 184px;
   left: 591px;
@@ -476,13 +471,13 @@ color: #5D5D5D;
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 21px;
   color: #5D5D5D;
 }
 
 #c1{
-  position: absolute;
+  position: relative;
   width: 9px;
   height: 9px;
   left: 299px;
@@ -492,7 +487,7 @@ color: #5D5D5D;
 }
 
 #c2{
-  position: absolute;
+  position: relative;
   width: 9px;
   height: 9px;
   left: 299px;
@@ -502,7 +497,7 @@ color: #5D5D5D;
 }
 
 #c3{
-  position: absolute;
+  position: relative;
   width: 9px;
   height: 9px;
   left: 299px;

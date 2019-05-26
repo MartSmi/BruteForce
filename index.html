@@ -47,76 +47,71 @@
       </div>
     </div>
 
-    <div id="step0">
-      <img class="img" id="imgShield" src="./images/baseline-security-24px.svg"  alt="">
+    <div id="mainSlider">
+      <div class="steps" id="step0">
+        <img class="img" id="imgShield" src="./images/baseline-security-24px.svg"  alt="">
 
-      <div class="header" id="question" >Are you confident about your password?</div>
-      <div id="fact">95% of personal data is lost due to weak and insecure passwords. With 3 easy steps now you can generate a complex and memorable password.</div>
-      <button class="button" id="generate">Generate</button>
+        <div class="header" id="question" >Are you confident about your password?</div>
+        <div id="fact">95% of personal data is lost due to weak and insecure passwords. With 3 easy steps now you can generate a complex and memorable password.</div>
+        <button class="button" id="generate" onclick="next()">Generate</button>
 
-    </div>
-
-    <div id="step1">
-      <div class="header" id="command">Select 3 to 6 keywords from the text</div>
-      <div id="keytextcontainer">
-      <ul id="keytext"></ul>
-      </div>
-    </div>
-
-    <div id="step2">
-      <div class="header" id="command">Select your favorite number</div>
-      <div id="slider">
-        <input type="range" min="1" max="100" id="sliderBar">
       </div>
 
-      <div id="favnumbcont">
-        <div id="favnumb"></div>
+      <div class="steps" id="step1">
+        <div class="header" id="command">Select 3 to 6 keywords from the text</div>
+        <div id="keytextcontainer">
+          <ul id="keytext"></ul>
+        </div>
       </div>
-    </div>
-    <div id="step3">
-      <div class="header" id="command">Select your favorite emoji</div>
-      <div id="emotes">
-        <div class="emoji" id="emoji1"  onClick="getEmojiId(this.id)">🙂</div>
-        <div id="emoji2" class="emoji" onClick="getEmojiId(this.id)">😘</div>
-        <div id="emoji3" class="emoji" onClick="getEmojiId(this.id)">&#128520;</div>
-        <div id="emoji4" class="emoji" onClick="getEmojiId(this.id)">😕</div>
-        <div id="emoji5" class="emoji" onClick="getEmojiId(this.id)">😃</div>
-        <div id="emoji6" class="emoji" onClick="getEmojiId(this.id)">😉</div>
-        <div id="emoji7" class="emoji" onClick="getEmojiId(this.id)">❤️️</div>
-        <div id="emoji8" class="emoji" onClick="getEmojiId(this.id)">😢</div>
-        <div id="emoji9" class="emoji" onClick="getEmojiId(this.id)">😮</div>
-        <div id="emoji10" class="emoji" onClick="getEmojiId(this.id)">😐</div>
-        <div id="emoji11" class="emoji" onClick="getEmojiId(this.id)">😛</div>
-        <div id="emoji12" class="emoji" onClick="getEmojiId(this.id)">☹️</div>
+
+      <div class="steps" id="step2">
+        <div class="header" id="command">Select your favorite number</div>
+        <div id="slider">
+          <input type="range" min="1" max="100" id="sliderBar">
+        </div>
+
+        <div id="favnumbcont">
+          <div id="favnumb"></div>
+        </div>
       </div>
+      <div class="steps" id="step3">
+        <div class="header" id="command">Select your favorite emoji</div>
+        <div id="emotes">
+          <div class="emoji" id="emoji1"  onClick="getEmojiId(this.id)">🙂</div>
+          <div id="emoji2" class="emoji" onClick="getEmojiId(this.id)">😘</div>
+          <div id="emoji3" class="emoji" onClick="getEmojiId(this.id)">&#128520;</div>
+          <div id="emoji4" class="emoji" onClick="getEmojiId(this.id)">😕</div>
+          <div id="emoji5" class="emoji" onClick="getEmojiId(this.id)">😃</div>
+          <div id="emoji6" class="emoji" onClick="getEmojiId(this.id)">😉</div>
+          <div id="emoji7" class="emoji" onClick="getEmojiId(this.id)">❤️️</div>
+          <div id="emoji8" class="emoji" onClick="getEmojiId(this.id)">😢</div>
+          <div id="emoji9" class="emoji" onClick="getEmojiId(this.id)">😮</div>
+          <div id="emoji10" class="emoji" onClick="getEmojiId(this.id)">😐</div>
+          <div id="emoji11" class="emoji" onClick="getEmojiId(this.id)">😛</div>
+          <div id="emoji12" class="emoji" onClick="getEmojiId(this.id)">☹️</div>
+        </div>
+      </div>
+
+      <div class="steps" id="step4">
+        <div class="header" id="congrats">Congrats!</div>
+        <div id="genpass">You generated your password</div>
+        <div id="passcontainer"><div id="pass"><3</div></div>
+        <!-- <button id="copy"><img src="./images/baseline-file_copy-24px.png"></button> -->
+        <div id="passtext1">Your password consists of:</div>
+        <div id="passtext2">The first two digits of keywords:<br><br>A favorite number multiplied by the number of keywords:<br> <br> <br> Emoji transformed into symbols:</div>
+        <div id="passtext3">Snapped Eyes Absence Daisy<br><br><br> 13 * 4 = 52<br><br>❤️ = <3 </div>
+          <div id="c1"></div>
+          <div id="c2"></div>
+          <div id="c3"></div>
+        </div>
     </div>
 
-    <button class="button" id="back">
+    <button class="button" id="back" onclick="back()">
     Back
     </button>
-    <button class="button" id="next">
+    <button class="button" id="next" onclick="next()">
     Next
     </button>
-
-
-    <div id="step4">
-      <div class="header" id="congrats">Congrats!</div>
-      <div id="genpass">You generated your password</div>
-      <div id="passcontainer"><div id="pass"><3</div></div>
-      <!-- <button id="copy"><img src="./images/baseline-file_copy-24px.png"></button> -->
-      <div id="passtext1">Your password consists of:</div>
-      <div id="passtext2">The first two digits of keywords:<br><br>A favorite number multiplied by the number of keywords:<br> <br> <br> Emoji transformed into symbols:</div>
-      <div id="passtext3">Snapped Eyes Absence Daisy<br><br><br> 13 * 4 = 52<br><br>❤️ = <3 </div>
-      <div id="c1"></div>
-      <div id="c2"></div>
-      <div id="c3"></div>
-      <button class="back">
-      Back
-      </button>
-      <button class="next">
-      Next
-      </button>
-    </div>
     <script src="main.js"></script>
   </body>
 </html>

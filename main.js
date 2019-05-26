@@ -1,8 +1,8 @@
-let stepsTotal = 4;
-let currentStep = 1;
+var currentStep = 0;
 var keywords = [];
-let keywordsCount = 0;
-var favNumber;
+var keywordsCount = 3;
+var favNumber = 2;
+var emoji = ":D";
 
 let btnGen = document.getElementById('generate');
 
@@ -13,49 +13,106 @@ let btnBack = document.getElementById('back');
 let progress = document.getElementById('progressthin');
 
 getJson();
-$(btnBack).hide();
-$(btnNext).hide();
-$("#step1").hide();
-$("#step2").hide();
-$("#step3").hide();
-$("#step4").hide();
-$("#imgBackround2").hide();
 
-btnGen.onclick = function () {
-  $(btnBack).show();
-  $(btnNext).show();
-  $("#imgBackround1").hide();
-  $("#imgBackround2").show();
-  $("#step0").hide();
-  $("#step1").show();
-}
-
-btnNext.onclick = function () {
-  currentStep++;
+function next() {
+  // console.log("next()")
   switch (currentStep) {
+    case 0:
+      currentStep++;
+      $("#mainSlider").css("transform","translateX("+ currentStep * -$(window).width() +"px)");
+      $("#imgBackround1").delay(1200).fadeOut(400);
+      $("#imgBackround2").delay(1200).fadeIn(400);
+      $("#progresscontainer").delay(1200).fadeIn(400);
+      $(btnBack).delay(1400).fadeIn(400);
+      $(btnNext).delay(1400).fadeIn(400);
+      break;
+    case 1:
+      if(keywordsCount >= 3)
+      {
+        currentStep++;
+        $("#mainSlider").css("transform","translateX("+ currentStep * -$(window).width() +"px)");
+      }
+      else {
+        alert("First choose atleast 3 keywords");
+      }
+      break;
     case 2:
-      $("#step1").hide();
-      $("#step2").show();
-      progress.style.width = '33%';
-    break;
-
+      if(favNumber != undefined)
+      {
+        currentStep++;
+        $("#mainSlider").css("transform","translateX("+ currentStep * -$(window).width() +"px)");
+      }
+      else {
+        alert("First choose your favourite number");
+      }
+      break;
     case 3:
-      $("#step2").hide();
-      $("#step3").show();
-      progress.style.width = '66%';
-
-    break;
-
-    case 4:
-      $("#step3").hide();
-      $("#step4").show();
-      $(btnBack).hide();
-      $(btnNext).hide();
-      progress.style.width = '99%';
-      createPassword(keywords, favNumber, output);
-    break;
+      if(keywordsCount >= 3)
+      {
+        currentStep++;
+        $("#mainSlider").css("transform","translateX("+ currentStep * -$(window).width() +"px)");
+      }
+      else {
+        alert("First choose your favourite emoji")
+      }
+      break;
+    default:
+      alert("error");
   }
 }
+
+function back() {
+  currentStep--;
+  $("#mainSlider").css("transform","translateX("+ currentStep * -$(window).width() +"px)");
+}
+
+
+// btnGen.onclick = function () {
+  // $(btnBack).show();
+  // $(btnNext).show();
+//   $("#imgBackround1").hide();
+//   $("#imgBackround2").show();
+//   $("#step0").hide();
+//   $("#step1").show();
+// }
+
+// btnNext.onclick = function () {
+//   currentStep++;
+//   switch (currentStep) {
+//     case 2:
+//       $("#step1").hide();
+//       $("#step2").show();
+//       progress.style.width = '33%';
+//     break;
+//
+//     case 3:
+//       $("#step2").hide();
+//       $("#step3").show();
+//       progress.style.width = '66%';
+//
+//     break;
+//
+//     case 4:
+//       $("#step3").hide();
+//       $("#step4").show();
+//       $(btnBack).hide();
+//       $(btnNext).hide();
+//       progress.style.width = '99%';
+//       createPassword(keywords, favNumber, output);
+//     break;
+//   }
+// }
+
+document.onkeydown = function(event) {
+    switch (event.keyCode) {
+       case 37:
+            back();
+          break;
+       case 39:
+            next();
+          break;
+    }
+};
 
 btnBack.onclick = function () {
   currentStep--;
@@ -134,61 +191,60 @@ document.getElementById('sliderBar').oninput = function () {
     document.getElementById('favnumb').innerHTML = favNumber;
   }
 }
-var output = '';
 
-function getEmojiId(emoji) {
-  console.log(emoji);
-  switch (emoji) {
+function getemoId(emo) {
+  console.log(emo);
+  switch (emo) {
     case 'emoji1':
-      output = ':)';
-      emoji.setAttribute('style', 'font-size: 100px');
+      emoji = ':)';
+      emo.setAttribute('style', 'font-size: 100px');
     break;
 
     case 'emoji2':
-      output = ':*';
+      emoji = ':*';
     break;
 
     case 'emoji3':
-      output = '>:‑)';
+      emoji = '>:‑)';
     break;
 
     case 'emoji4':
-      output = ':(';
+      emoji = ':(';
     break;
 
     case 'emoji5':
-      output = ':D';
+      emoji = ':D';
     break;
 
     case 'emoji6':
-      output = ';)';
+      emoji = ';)';
     break;
 
     case 'emoji7':
-      output = '<3';
+      emoji = '<3';
     break;
 
     case 'emoji8':
-      output = ":'(";
+      emoji = ":'(";
     break;
 
     case 'emoji9':
-      output = ':O';
+      emoji = ':O';
     break;
 
     case 'emoji10':
-      output = ':|';
+      emoji = ':|';
     break;
 
     case 'emoji11':
-      output = 'XD';
+      emoji = 'XD';
     break;
 
     case 'emoji12':
-      output = ':(0';
+      emoji = ':(0';
     break;
   }
-  console.log(output);
+  console.log(emoji);
 }
 
 function createPassword(words, num, emote) {
