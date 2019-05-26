@@ -391,10 +391,11 @@ color: #5D5D5D;
 #sliderBar::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 25px;
-  height: 25px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: #589AFF;
+  border: 8px solid #589AFF;
+  background: #ffffff;
   cursor: pointer;
 }
 
