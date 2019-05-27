@@ -1,8 +1,7 @@
 var currentStep = 0;
 var keywords = [];
-var keywordsCount = 3;
-var favNumber = 2;
-var emoji = ":D";
+var number;
+var emoji;
 
 let btnGen = document.getElementById('generate');
 
@@ -23,7 +22,6 @@ function move(){
   $("#mainSlider").css("transform","translateX("+ currentStep * -$(window).width() +"px)");
 }
 
-
 function next() {
   // console.log("next()")
   switch (currentStep) {
@@ -37,7 +35,7 @@ function next() {
       $(btnNext).delay(1400).fadeIn(400);
       break;
     case 1:
-      if(keywordsCount >= 3)
+      if(keywords.length >= 3)
       {
         currentStep++;
         move();
@@ -47,7 +45,7 @@ function next() {
       }
       break;
     case 2:
-      if(favNumber != undefined)
+      if(number != undefined)
       {
         currentStep++;
         move();
@@ -57,8 +55,9 @@ function next() {
       }
       break;
     case 3:
-      if(keywordsCount >= 3)
+      if(keywords.length >= 3)
       {
+        createPassword();
         currentStep++;
         move();
         $(btnBack).delay(400).fadeOut(400);
@@ -87,7 +86,7 @@ function back() {
       $(btnNext).fadeOut(400);
       break;
     case 2:
-      if(keywordsCount >= 3)
+      if(keywords.length >= 3)
       {
         currentStep--;
         move();
@@ -97,7 +96,7 @@ function back() {
       }
       break;
     case 3:
-      if(favNumber != undefined)
+      if(number != undefined)
       {
         currentStep--;
         move();
@@ -107,7 +106,7 @@ function back() {
       }
       break;
     case 4:
-      if(keywordsCount >= 3)
+      if(keywords.length >= 3)
       {
         currentStep--;
         move();
@@ -131,41 +130,6 @@ document.onkeydown = function(event) {
           break;
     }
 };
-
-btnBack.onclick = function () {
-  currentStep--;
-  switch (currentStep) {
-    case 0:
-      $(btnBack).hide();
-      $(btnNext).hide();
-      $("#step1").hide();
-      $("#step0").show();
-      $("#imgBackround1").show();
-      $("#imgBackround2").hide();
-      currentStep++;
-    break;
-
-    case 1:
-      $("#step2").hide();
-      $("#step1").show();
-      progress.style.width = '0';
-
-    break;
-
-    case 2:
-      $("#step3").hide();
-      $("#step2").show();
-      progress.style.width = '33%';
-    break;
-
-    case 3:
-      $("#step4").hide();
-      $("#step3").show();
-      progress.style.width = '66%';
-
-    break;
-  }
-}
 
 // Getting JSON
 function getJson() {
@@ -197,16 +161,16 @@ function pullText(text) {
     if (this.getAttribute("style") != "color:#69abf0") {
       this.setAttribute('style', 'color:#69abf0');
       // this.setAttribute('style', 'font-weight:1200');
-      keywords[keywordsCount++] = $(this).text();
+      keywords[keywords.length] = $(this).text();
     }
   });
 }
 
 
 document.getElementById('sliderBar').oninput = function () {
-  favNumber = document.getElementById('sliderBar').value;
-  if (favNumber > 0) {
-    document.getElementById('favnumb').innerHTML = favNumber;
+  number = document.getElementById('sliderBar').value;
+  if (number > 0) {
+    document.getElementById('favnumb').innerHTML = number;
   }
 }
 
@@ -265,16 +229,13 @@ function getemoId(emo) {
   console.log(emoji);
 }
 
-function createPassword(words, num, emote) {
+function createPassword() {
   var thePassword = '';
-  console.log(num);
-  for (var i = 0; i < words.length; i++) {
-    console.log(words[i].slice(0, 2));
-    thePassword += words[i].slice(0, 2);
+  for (var i = 0; i < keywords.length; i++) {
+    thePassword += keywords[i].slice(0, 2);
   }
-  thePassword += num * words.length;
-  console.log(emote);
-  thePassword += emote;
+  thePassword += number * keywords.length;
+  thePassword += emoji;
   document.getElementById('pass').innerHTML = thePassword;
-  document.getElementById('passtext3').innerHTML = words + '<br>' + '<br>' + '<br>' + num + ' * ' + words.length + ' = ' + favNumber * words.length+ '<br>' + '<br>' + '<br>'+ '<br>' + emote;
+  document.getElementById('passtext3').innerHTML = keywords + '<br>' + '<br>' + '<br>' + number + ' * ' + keywords.length + ' = ' + number * keywords.length+ '<br>' + '<br>' + '<br>'+ '<br>' + emoji;
 }

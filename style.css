@@ -292,10 +292,10 @@ color: #5D5D5D;
 
 #slider{
   position: relative;
-  width: 42%;
+  width: 42vw;
   height: 30px;
-  left: 29%;
-  top: 33%;
+  left: 29vw;
+  top: 33vh;
 
   background: #F9F9F9;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1), inset 0px 4px 4px rgba(0, 0, 0, 0.1);
@@ -306,7 +306,7 @@ color: #5D5D5D;
   position: relative;
   top: 6px;
   left: 1%;
-  width: 98%;
+  width: 41vw;
   height: 15px;
   -webkit-appearance: none;
   border-radius: 5px;
@@ -328,12 +328,12 @@ color: #5D5D5D;
 #sliderBar::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 25px;
-  height: 25px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
+  border: 8px solid #589AFF;
   background: #ffffff;
   cursor: pointer;
-  border: 8px solid #589AFF;
 }
 
 #sliderBar::-moz-range-thumb {
@@ -344,6 +344,7 @@ color: #5D5D5D;
   cursor: pointer;
   border: 8px solid #589AFF;
 }
+
 
 .emoji{
   font-family: Roboto;
@@ -399,45 +400,6 @@ color: #5D5D5D;
   background: #FFFFFF;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 34px;
-}
-
-#sliderBar {
-  position: relative;
-  top: 6px;
-  left: 5px;
-  width: 805px;
-  height: 15px;
-  -webkit-appearance: none;
-  border-radius: 5px;
-  background: #589AFF;
-  outline: round;
-  opacity: 0.7;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
-}
-
-#sliderBar:hover {
-  opacity: 1;
-}
-
-#sliderBar::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 8px solid #589AFF;
-  background: #ffffff;
-  cursor: pointer;
-}
-
-#sliderBar::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  background: #ffffff;
-  cursor: pointer;
-  border: 8px solid #589AFF;
 }
 
 #pass{
