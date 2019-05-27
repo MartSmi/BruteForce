@@ -1,5 +1,5 @@
 var currentStep = 0;
-var keywords = [];
+var keywords = ["hello", "bonjour", "labas"];
 var number;
 var emoji;
 
@@ -55,7 +55,7 @@ function next() {
       }
       break;
     case 3:
-      if(keywords.length >= 3)
+      if(emoji != undefined)
       {
         createPassword();
         currentStep++;
@@ -174,7 +174,7 @@ document.getElementById('sliderBar').oninput = function () {
   }
 }
 
-function getemoId(emo) {
+function getEmojiId(emo) {
   console.log(emo);
   switch (emo) {
     case 'emoji1':
