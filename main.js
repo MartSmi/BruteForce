@@ -12,14 +12,24 @@ let btnBack = document.getElementById('back');
 
 let progress = document.getElementById('progressthin');
 
-getJson();
+
+window.onload = function() {
+  getJson();
+  $(".circle").css("margin-top", ($("#progresscontainer").height() - $(".bigcircle").height()) / 2);
+}
+
+function move(){
+  $("#progressthin").css("width", 33.4 * (currentStep - 1) + "%");
+  $("#mainSlider").css("transform","translateX("+ currentStep * -$(window).width() +"px)");
+}
+
 
 function next() {
   // console.log("next()")
   switch (currentStep) {
     case 0:
       currentStep++;
-      $("#mainSlider").css("transform","translateX("+ currentStep * -$(window).width() +"px)");
+      move();
       $("#imgBackround1").delay(1200).fadeOut(400);
       $("#imgBackround2").delay(1200).fadeIn(400);
       $("#progresscontainer").delay(1200).fadeIn(400);
@@ -30,7 +40,7 @@ function next() {
       if(keywordsCount >= 3)
       {
         currentStep++;
-        $("#mainSlider").css("transform","translateX("+ currentStep * -$(window).width() +"px)");
+        move();
       }
       else {
         alert("First choose atleast 3 keywords");
@@ -40,7 +50,7 @@ function next() {
       if(favNumber != undefined)
       {
         currentStep++;
-        $("#mainSlider").css("transform","translateX("+ currentStep * -$(window).width() +"px)");
+        move();
       }
       else {
         alert("First choose your favourite number");
@@ -50,7 +60,10 @@ function next() {
       if(keywordsCount >= 3)
       {
         currentStep++;
-        $("#mainSlider").css("transform","translateX("+ currentStep * -$(window).width() +"px)");
+        move();
+        $(btnBack).delay(400).fadeOut(400);
+        $(btnNext).delay(400).fadeOut(400);
+
       }
       else {
         alert("First choose your favourite emoji")
@@ -62,46 +75,51 @@ function next() {
 }
 
 function back() {
-  currentStep--;
-  $("#mainSlider").css("transform","translateX("+ currentStep * -$(window).width() +"px)");
+  // console.log("next()")
+  switch (currentStep) {
+    case 1:
+      currentStep--;
+      move();
+      $("#imgBackround2").delay(1200).fadeOut(400);
+      $("#imgBackround1").delay(1200).fadeIn(400);
+      $("#progresscontainer").delay(1200).fadeOut(400);
+      $(btnBack).fadeOut(400);
+      $(btnNext).fadeOut(400);
+      break;
+    case 2:
+      if(keywordsCount >= 3)
+      {
+        currentStep--;
+        move();
+      }
+      else {
+        alert("First choose atleast 3 keywords");
+      }
+      break;
+    case 3:
+      if(favNumber != undefined)
+      {
+        currentStep--;
+        move();
+      }
+      else {
+        alert("First choose your favourite number");
+      }
+      break;
+    case 4:
+      if(keywordsCount >= 3)
+      {
+        currentStep--;
+        move();
+      }
+      else {
+        alert("First choose your favourite emoji")
+      }
+      break;
+    default:
+      alert("error");
+  }
 }
-
-
-// btnGen.onclick = function () {
-  // $(btnBack).show();
-  // $(btnNext).show();
-//   $("#imgBackround1").hide();
-//   $("#imgBackround2").show();
-//   $("#step0").hide();
-//   $("#step1").show();
-// }
-
-// btnNext.onclick = function () {
-//   currentStep++;
-//   switch (currentStep) {
-//     case 2:
-//       $("#step1").hide();
-//       $("#step2").show();
-//       progress.style.width = '33%';
-//     break;
-//
-//     case 3:
-//       $("#step2").hide();
-//       $("#step3").show();
-//       progress.style.width = '66%';
-//
-//     break;
-//
-//     case 4:
-//       $("#step3").hide();
-//       $("#step4").show();
-//       $(btnBack).hide();
-//       $(btnNext).hide();
-//       progress.style.width = '99%';
-//       createPassword(keywords, favNumber, output);
-//     break;
-//   }
-// }
 
 document.onkeydown = function(event) {
     switch (event.keyCode) {
