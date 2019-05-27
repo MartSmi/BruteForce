@@ -1,5 +1,5 @@
 var currentStep = 0;
-var keywords = ["hello", "bonjour", "labas"];
+var keywords = [];
 var number;
 var emoji;
 
@@ -237,5 +237,6 @@ function createPassword() {
   thePassword += number * keywords.length;
   thePassword += emoji;
   document.getElementById('pass').innerHTML = thePassword;
-  document.getElementById('passtext3').innerHTML = keywords + '<br>' + '<br>' + '<br>' + number + ' * ' + keywords.length + ' = ' + number * keywords.length+ '<br>' + '<br>' + '<br>'+ '<br>' + emoji;
+  //document.getElementById('passtext3').innerHTML = keywords + '<br>' + '<br>' + '<br>' + number + ' * ' + keywords.length + ' = ' + number * keywords.length+ '<br>' + '<br>' + '<br>'+ '<br>' + emoji;
+  document.getElementById('passtext3').innerHTML = `${keywords}<br><br><br>${number} * ${keywords.length} = ${number * keywords.length}<br><br><br><br>${emoji}`;
 }
